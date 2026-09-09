@@ -1,0 +1,452 @@
+{
+  "users": [],
+  "sessions": [
+    {
+      "id": "sess_1788980966806_0wu1",
+      "userId": "guest_1788979472595",
+      "userName": "Guest Candidate",
+      "mode": "simulated",
+      "selectedDomain": "All",
+      "totalQuestions": 15,
+      "correctAnswers": 14,
+      "scorePercentage": 93,
+      "passed": true,
+      "timeTakenSeconds": 1459,
+      "domainBreakdown": {
+        "Scrum Roles": {
+          "total": 3,
+          "correct": 3,
+          "percentage": 100
+        },
+        "Scrum Events": {
+          "total": 6,
+          "correct": 5,
+          "percentage": 83
+        },
+        "Scrum Artifacts": {
+          "total": 3,
+          "correct": 3,
+          "percentage": 100
+        },
+        "Scrum Theory & Values": {
+          "total": 2,
+          "correct": 2,
+          "percentage": 100
+        },
+        "Agile Leadership": {
+          "total": 1,
+          "correct": 1,
+          "percentage": 100
+        }
+      },
+      "answers": [
+        {
+          "questionId": 1,
+          "question": "What is the primary responsibility of the Scrum Master during a Sprint?",
+          "options": [
+            {
+              "key": "A",
+              "text": "To assign daily task tickets to team members"
+            },
+            {
+              "key": "B",
+              "text": "To manage the budget and project schedule"
+            },
+            {
+              "key": "C",
+              "text": "To coach the Scrum Team and facilitate removing impediments"
+            },
+            {
+              "key": "D",
+              "text": "To sign off on user story acceptance criteria"
+            }
+          ],
+          "correctAnswer": "C",
+          "selectedOption": "C",
+          "isCorrect": true,
+          "explanation": "The Scrum Master is a true leader who serves the Scrum Team and the larger organization. They coach team members on Scrum theory and practice, and help remove impediments to the team's progress.",
+          "domain": "Scrum Roles"
+        },
+        {
+          "questionId": 2,
+          "question": "Who has the final authority to cancel a Sprint prior to its scheduled end date?",
+          "options": [
+            {
+              "key": "A",
+              "text": "The Scrum Master"
+            },
+            {
+              "key": "B",
+              "text": "The Product Owner"
+            },
+            {
+              "key": "C",
+              "text": "The Development Team by majority vote"
+            },
+            {
+              "key": "D",
+              "text": "The Agile Coach or Project Sponsor"
+            }
+          ],
+          "correctAnswer": "B",
+          "selectedOption": "B",
+          "isCorrect": true,
+          "explanation": "According to the Scrum Guide, only the Product Owner has the authority to cancel the Sprint if the Sprint Goal becomes obsolete.",
+          "domain": "Scrum Events"
+        },
+        {
+          "questionId": 3,
+          "question": "What is the maximum recommended time-box for a Daily Scrum event in a 1-month Sprint?",
+          "options": [
+            {
+              "key": "A",
+              "text": "15 minutes"
+            },
+            {
+              "key": "B",
+              "text": "30 minutes"
+            },
+            {
+              "key": "C",
+              "text": "45 minutes"
+            },
+            {
+              "key": "D",
+              "text": "1 hour"
+            }
+          ],
+          "correctAnswer": "A",
+          "selectedOption": "A",
+          "isCorrect": true,
+          "explanation": "The Daily Scrum is a 15-minute event for the Developers of the Scrum Team, regardless of Sprint length, to inspect progress toward the Sprint Goal and adapt the Sprint Backlog.",
+          "domain": "Scrum Events"
+        },
+        {
+          "questionId": 4,
+          "question": "Which of the following best describes the Definition of Done (DoD)?",
+          "options": [
+            {
+              "key": "A",
+              "text": "A checklist created by the Project Manager to track feature completion"
+            },
+            {
+              "key": "B",
+              "text": "A formal description of the state of the Increment when it meets the quality measures required for the product"
+            },
+            {
+              "key": "C",
+              "text": "A list of acceptance criteria defined individually for each user story"
+            },
+            {
+              "key": "D",
+              "text": "The approval criteria set by the customer during Sprint Review"
+            }
+          ],
+          "correctAnswer": "B",
+          "selectedOption": "B",
+          "isCorrect": true,
+          "explanation": "The Definition of Done is a formal description of the state of the Increment when it meets the quality measures required for the product. It creates transparency by giving everyone a shared understanding of what work was completed.",
+          "domain": "Scrum Artifacts"
+        },
+        {
+          "questionId": 5,
+          "question": "During Sprint Planning, who decides how many Product Backlog items to select for the Sprint?",
+          "options": [
+            {
+              "key": "A",
+              "text": "The Product Owner"
+            },
+            {
+              "key": "B",
+              "text": "The Scrum Master"
+            },
+            {
+              "key": "C",
+              "text": "The Developers"
+            },
+            {
+              "key": "D",
+              "text": "The Stakeholders and Customers"
+            }
+          ],
+          "correctAnswer": "C",
+          "selectedOption": "A",
+          "isCorrect": false,
+          "explanation": "The Developers assess their capacity and past performance to select the number of items from the Product Backlog that they forecast they can complete during the Sprint.",
+          "domain": "Scrum Events"
+        },
+        {
+          "questionId": 6,
+          "question": "What are the three pillars of empirical process control in Scrum?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Planning, Executing, and Controlling"
+            },
+            {
+              "key": "B",
+              "text": "Transparency, Inspection, and Adaptation"
+            },
+            {
+              "key": "C",
+              "text": "Velocity, Burndown, and Capacity"
+            },
+            {
+              "key": "D",
+              "text": "Courage, Respect, and Commitment"
+            }
+          ],
+          "correctAnswer": "B",
+          "selectedOption": "B",
+          "isCorrect": true,
+          "explanation": "Empiricism asserts that knowledge comes from experience and making decisions based on what is observed. The three pillars are Transparency, Inspection, and Adaptation.",
+          "domain": "Scrum Theory & Values"
+        },
+        {
+          "questionId": 7,
+          "question": "What is the Product Owner's primary focus regarding the Product Backlog?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Ensuring all items are assigned to developers"
+            },
+            {
+              "key": "B",
+              "text": "Maximizing the value of the product resulting from the work of the Scrum Team"
+            },
+            {
+              "key": "C",
+              "text": "Writing all technical specifications and code documentation"
+            },
+            {
+              "key": "D",
+              "text": "Calculating team velocity and burn-up charts"
+            }
+          ],
+          "correctAnswer": "B",
+          "selectedOption": "B",
+          "isCorrect": true,
+          "explanation": "The Product Owner is responsible for maximizing the value of the product resulting from the work of the Scrum Team. How this is done may vary widely across organizations.",
+          "domain": "Scrum Roles"
+        },
+        {
+          "questionId": 8,
+          "question": "What is the primary purpose of the Sprint Retrospective?",
+          "options": [
+            {
+              "key": "A",
+              "text": "To demonstrate completed product features to key stakeholders"
+            },
+            {
+              "key": "B",
+              "text": "To plan ways to increase quality and effectiveness in upcoming Sprints"
+            },
+            {
+              "key": "C",
+              "text": "To re-estimate remaining items in the Product Backlog"
+            },
+            {
+              "key": "D",
+              "text": "To review individual team member performance metrics"
+            }
+          ],
+          "correctAnswer": "B",
+          "selectedOption": "B",
+          "isCorrect": true,
+          "explanation": "The purpose of the Sprint Retrospective is to plan ways to increase quality and effectiveness by inspecting how the last Sprint went with regards to individuals, interactions, processes, tools, and their Definition of Done.",
+          "domain": "Scrum Events"
+        },
+        {
+          "questionId": 9,
+          "question": "Which Scrum artifact commitment provides focus for the Scrum Team during the Sprint?",
+          "options": [
+            {
+              "key": "A",
+              "text": "The Product Goal"
+            },
+            {
+              "key": "B",
+              "text": "The Sprint Goal"
+            },
+            {
+              "key": "C",
+              "text": "The Definition of Done"
+            },
+            {
+              "key": "D",
+              "text": "The Release Plan"
+            }
+          ],
+          "correctAnswer": "B",
+          "selectedOption": "B",
+          "isCorrect": true,
+          "explanation": "The Sprint Goal is the single objective for the Sprint. It is a commitment by the Developers that provides flexibility regarding the exact work needed to achieve it.",
+          "domain": "Scrum Artifacts"
+        },
+        {
+          "questionId": 10,
+          "question": "Who is responsible for tracking total work remaining in the Sprint Backlog?",
+          "options": [
+            {
+              "key": "A",
+              "text": "The Scrum Master"
+            },
+            {
+              "key": "B",
+              "text": "The Product Owner"
+            },
+            {
+              "key": "C",
+              "text": "The Developers"
+            },
+            {
+              "key": "D",
+              "text": "The QA Lead"
+            }
+          ],
+          "correctAnswer": "C",
+          "selectedOption": "C",
+          "isCorrect": true,
+          "explanation": "The Developers track total work remaining at least for every Daily Scrum to project the likelihood of achieving the Sprint Goal.",
+          "domain": "Scrum Roles"
+        },
+        {
+          "questionId": 11,
+          "question": "What should happen if the Product Backlog items selected for the Sprint cannot be completed within the time-box?",
+          "options": [
+            {
+              "key": "A",
+              "text": "The Sprint should be extended by a few days"
+            },
+            {
+              "key": "B",
+              "text": "The Developers and Product Owner negotiate the scope of the Sprint Backlog without changing the Sprint Goal"
+            },
+            {
+              "key": "C",
+              "text": "The Scrum Master changes the Definition of Done to finish faster"
+            },
+            {
+              "key": "D",
+              "text": "Unfinished items are automatically marked as Done and released"
+            }
+          ],
+          "correctAnswer": "B",
+          "selectedOption": "B",
+          "isCorrect": true,
+          "explanation": "Sprints are fixed length events that end when the time-box expires. If work turns out to be different than expected, the Developers collaborate with the Product Owner to negotiate the scope within the Sprint.",
+          "domain": "Scrum Events"
+        },
+        {
+          "questionId": 12,
+          "question": "What are the five official Scrum Values?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Quality, Speed, Flexibility, Innovation, Transparency"
+            },
+            {
+              "key": "B",
+              "text": "Commitment, Focus, Openness, Respect, Courage"
+            },
+            {
+              "key": "C",
+              "text": "Trust, Leadership, Efficiency, Autonomy, Alignment"
+            },
+            {
+              "key": "D",
+              "text": "Inspection, Adaptation, Honesty, Discipline, Velocity"
+            }
+          ],
+          "correctAnswer": "B",
+          "selectedOption": "B",
+          "isCorrect": true,
+          "explanation": "Successful use of Scrum depends on people becoming more proficient in living five values: Commitment, Focus, Openness, Respect, and Courage.",
+          "domain": "Scrum Theory & Values"
+        },
+        {
+          "questionId": 13,
+          "question": "In Scrum, who is responsible for creating a plan for the Sprint (the Sprint Backlog)?",
+          "options": [
+            {
+              "key": "A",
+              "text": "The Scrum Master"
+            },
+            {
+              "key": "B",
+              "text": "The Product Owner"
+            },
+            {
+              "key": "C",
+              "text": "The Developers"
+            },
+            {
+              "key": "D",
+              "text": "The Project Management Office (PMO)"
+            }
+          ],
+          "correctAnswer": "C",
+          "selectedOption": "C",
+          "isCorrect": true,
+          "explanation": "The Sprint Backlog is a plan by and for the Developers. It is a highly visible, real-time picture of the work that the Developers plan to accomplish during the Sprint.",
+          "domain": "Scrum Artifacts"
+        },
+        {
+          "questionId": 14,
+          "question": "What is the recommended maximum time-box for a Sprint Review in a 1-month Sprint?",
+          "options": [
+            {
+              "key": "A",
+              "text": "2 hours"
+            },
+            {
+              "key": "B",
+              "text": "4 hours"
+            },
+            {
+              "key": "C",
+              "text": "8 hours"
+            },
+            {
+              "key": "D",
+              "text": "1 day"
+            }
+          ],
+          "correctAnswer": "B",
+          "selectedOption": "B",
+          "isCorrect": true,
+          "explanation": "The Sprint Review is time-boxed to a maximum of 4 hours for a one-month Sprint. For shorter Sprints, the event is usually shorter.",
+          "domain": "Scrum Events"
+        },
+        {
+          "questionId": 15,
+          "question": "When is a Product Backlog item considered ready for selection in Sprint Planning?",
+          "options": [
+            {
+              "key": "A",
+              "text": "When it has been approved by senior management"
+            },
+            {
+              "key": "B",
+              "text": "When it has been refined such that it can be Done by the Scrum Team within one Sprint"
+            },
+            {
+              "key": "C",
+              "text": "When all technical code diagrams are drawn"
+            },
+            {
+              "key": "D",
+              "text": "When it has a fixed cost estimate attached to it"
+            }
+          ],
+          "correctAnswer": "B",
+          "selectedOption": "B",
+          "isCorrect": true,
+          "explanation": "Product Backlog items that can be Done by the Scrum Team within one Sprint are deemed ready for selection in a Sprint Planning event.",
+          "domain": "Agile Leadership"
+        }
+      ],
+      "timestamp": "2026-09-09T19:09:26.806Z"
+    }
+  ]
+}
