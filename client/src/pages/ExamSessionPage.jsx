@@ -79,7 +79,7 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
 
   if (loading) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-[60vh] space-y-4">
+      <div className="flex flex-col items-center justify-center min-h-[60vh] space-y-4 px-4 text-center">
         <div className="w-12 h-12 rounded-full border-4 border-emerald-500/20 border-t-emerald-500 animate-spin"></div>
         <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">Loading CSM Exam Questions from Excel sheet...</p>
       </div>
@@ -88,7 +88,7 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
 
   if (questions.length === 0) {
     return (
-      <div className="glass-panel p-8 rounded-3xl text-center space-y-4 max-w-md mx-auto my-12">
+      <div className="glass-panel p-6 sm:p-8 rounded-3xl text-center space-y-4 max-w-md mx-auto my-12">
         <AlertCircle className="w-12 h-12 text-rose-500 mx-auto" />
         <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">No Questions Found</h3>
         <p className="text-xs text-slate-600 dark:text-slate-400">No questions matched the selected domain or Excel file.</p>
@@ -102,21 +102,21 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
   const progressPercent = Math.round((answeredCount / questions.length) * 100);
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6 pb-20 animate-fade-in relative">
+    <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6 pb-20 animate-fade-in relative px-1 sm:px-4">
       
       {/* EXAM TOP CONTROL HEADER */}
-      <div className="glass-panel p-4 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-4 sticky top-20 z-30 bg-white/90 dark:bg-slate-950/90 backdrop-blur-xl">
+      <div className="glass-panel p-3 sm:p-4 rounded-2xl border border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2.5 sticky top-16 sm:top-20 z-30 bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl">
         
         {/* Left: Mode Badge & Cancel */}
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-2 sm:space-x-3">
           <button
             onClick={() => setShowConfirmModal(true)}
-            className="text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-rose-500/30 transition-colors"
+            className="text-[11px] sm:text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 px-2.5 sm:px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-rose-500/30 transition-colors"
           >
             End Exam
           </button>
 
-          <span className="hidden sm:inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30 text-[11px] font-extrabold uppercase">
+          <span className="hidden md:inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30 text-[11px] font-extrabold uppercase">
             {config.mode === 'simulated' ? '60-Min Exam Simulator' : 'Practice Mode'}
           </span>
         </div>
@@ -133,17 +133,17 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
         <div className="flex items-center space-x-2">
           <button
             onClick={() => setShowDrawer(!showDrawer)}
-            className="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+            className="flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-[11px] sm:text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
           >
             <LayoutGrid className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
             <span className="hidden sm:inline">Questions</span>
-            <span className="text-[11px] text-slate-500 dark:text-slate-400">({answeredCount}/{questions.length})</span>
+            <span className="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">({answeredCount}/{questions.length})</span>
           </button>
 
           <button
             onClick={() => setShowConfirmModal(true)}
             disabled={submitting}
-            className="gradient-btn px-4 py-1.5 rounded-xl text-xs uppercase tracking-wider flex items-center space-x-1.5"
+            className="gradient-btn px-3 sm:px-4 py-1.5 rounded-xl text-[11px] sm:text-xs uppercase tracking-wider flex items-center space-x-1.5"
           >
             <Send className="w-3.5 h-3.5" />
             <span>Submit</span>
@@ -174,11 +174,11 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
       />
 
       {/* BOTTOM NAVIGATION CONTROLS */}
-      <div className="flex items-center justify-between pt-2">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
         <button
           onClick={() => setCurrentIndex(prev => Math.max(0, prev - 1))}
           disabled={currentIndex === 0}
-          className={`flex items-center space-x-2 px-5 py-3 rounded-2xl text-xs font-bold transition-all ${
+          className={`w-full sm:w-auto flex items-center justify-center space-x-2 px-5 py-3 rounded-2xl text-xs font-bold transition-all ${
             currentIndex === 0
               ? 'opacity-40 bg-slate-200 dark:bg-slate-900 text-slate-400 dark:text-slate-600 cursor-not-allowed'
               : 'bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700'
@@ -188,14 +188,14 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
           <span>Previous</span>
         </button>
 
-        <span className="text-xs text-slate-600 dark:text-slate-400 font-semibold">
+        <span className="text-xs text-slate-600 dark:text-slate-400 font-semibold order-last sm:order-none">
           {answeredCount} of {questions.length} Answered
         </span>
 
         {currentIndex < questions.length - 1 ? (
           <button
             onClick={() => setCurrentIndex(prev => Math.min(questions.length - 1, prev + 1))}
-            className="flex items-center space-x-2 px-5 py-3 rounded-2xl gradient-btn text-xs font-bold"
+            className="w-full sm:w-auto flex items-center justify-center space-x-2 px-5 py-3 rounded-2xl gradient-btn text-xs font-bold"
           >
             <span>Next Question</span>
             <ChevronRight className="w-4 h-4" />
@@ -203,7 +203,7 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
         ) : (
           <button
             onClick={() => setShowConfirmModal(true)}
-            className="flex items-center space-x-2 px-6 py-3 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 font-extrabold text-xs shadow-lg shadow-emerald-500/20"
+            className="w-full sm:w-auto flex items-center justify-center space-x-2 px-6 py-3 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 font-extrabold text-xs shadow-lg shadow-emerald-500/20"
           >
             <span>Review & Submit</span>
             <Send className="w-4 h-4" />
@@ -214,15 +214,15 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
       {/* QUESTION NAV DRAWER MODAL */}
       {showDrawer && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
-          <div className="glass-panel w-full max-w-xl rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-2xl relative max-h-[85vh] overflow-y-auto">
+          <div className="glass-panel w-full max-w-xl rounded-3xl p-5 sm:p-6 border border-slate-200 dark:border-slate-700 shadow-2xl relative max-h-[85vh] overflow-y-auto">
             <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-200 dark:border-slate-800">
-              <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">Question Palette Navigation</h3>
+              <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100">Question Palette Navigation</h3>
               <button onClick={() => setShowDrawer(false)} className="p-1.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100">
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="grid grid-cols-5 sm:grid-cols-8 gap-3">
+            <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2.5">
               {questions.map((q, idx) => {
                 const isAns = Boolean(userAnswers[q.id]);
                 const isFlag = flaggedQuestions.has(q.id);
@@ -236,7 +236,7 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
                   <button
                     key={q.id}
                     onClick={() => { setCurrentIndex(idx); setShowDrawer(false); }}
-                    className={`relative p-3 rounded-xl border text-xs font-bold transition-all ${btnStyle}`}
+                    className={`relative p-2.5 sm:p-3 rounded-xl border text-xs font-bold transition-all ${btnStyle}`}
                   >
                     {idx + 1}
                     {isFlag && (
@@ -254,7 +254,7 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
       {showConfirmModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md">
           <div className="glass-panel w-full max-w-md rounded-3xl p-6 border border-slate-200 dark:border-slate-700 text-center space-y-4">
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">Submit Exam for Grading?</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100">Submit Exam for Grading?</h3>
             
             <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
               You have answered <span className="text-emerald-600 dark:text-emerald-400 font-bold">{answeredCount}</span> of <span className="text-slate-900 dark:text-slate-100 font-bold">{questions.length}</span> questions.
