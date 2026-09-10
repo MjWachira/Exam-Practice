@@ -46,17 +46,17 @@ export default function SessionResultsPage({ session, onRetake, onBackToDashboar
         
         {/* Background glow based on pass/fail */}
         <div className={`absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full blur-3xl pointer-events-none ${
-          session.passed ? 'bg-emerald-500/15' : 'bg-rose-500/15'
+          session.passed ? 'bg-violet-500/15' : 'bg-rose-500/15'
         }`}></div>
 
         {/* Pass / Fail Status Badge */}
         <div className="relative z-10 space-y-3">
           <div className={`inline-flex items-center space-x-2 px-3.5 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-extrabold uppercase tracking-wider border ${
             session.passed
-              ? 'bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border-emerald-500/40 shadow-lg shadow-emerald-500/10'
+              ? 'bg-violet-500/20 text-violet-900 dark:text-violet-200 border-violet-500/40 shadow-lg shadow-violet-500/10'
               : 'bg-rose-500/20 text-rose-800 dark:text-rose-300 border-rose-500/40'
           }`}>
-            {session.passed ? <CheckCircle2 className="w-4 h-4 shrink-0" /> : <XCircle className="w-4 h-4 shrink-0" />}
+            {session.passed ? <CheckCircle2 className="w-4 h-4 shrink-0 text-violet-600 dark:text-violet-400" /> : <XCircle className="w-4 h-4 shrink-0" />}
             <span className="text-center">{session.passed ? 'Passed Certified ScrumMaster Practice Exam' : 'Needs Practice (Did Not Meet 74% Pass Mark)'}</span>
           </div>
 
@@ -80,7 +80,7 @@ export default function SessionResultsPage({ session, onRetake, onBackToDashboar
           </div>
           <div className="p-2.5 sm:p-3 bg-slate-100/80 dark:bg-slate-900/60 rounded-xl border border-slate-200 dark:border-slate-800">
             <p className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 uppercase font-semibold">CSM Benchmark</p>
-            <p className="text-xs font-bold text-emerald-600 dark:text-emerald-400">74% Minimum</p>
+            <p className="text-xs font-bold text-violet-600 dark:text-violet-400">74% Minimum</p>
           </div>
           <div className="p-2.5 sm:p-3 bg-slate-100/80 dark:bg-slate-900/60 rounded-xl border border-slate-200 dark:border-slate-800">
             <p className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 uppercase font-semibold">Candidate</p>
@@ -127,7 +127,7 @@ export default function SessionResultsPage({ session, onRetake, onBackToDashboar
           <div className="flex flex-wrap items-center gap-1.5 bg-slate-100 dark:bg-slate-900 p-1 rounded-xl border border-slate-200 dark:border-slate-800 text-xs font-bold">
             <button
               onClick={() => setFilterMode('all')}
-              className={`px-3 py-1.5 rounded-lg transition-all ${filterMode === 'all' ? 'bg-emerald-500 text-slate-950' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'}`}
+              className={`px-3 py-1.5 rounded-lg transition-all ${filterMode === 'all' ? 'bg-violet-600 text-white' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'}`}
             >
               All ({session.answers?.length || 0})
             </button>
@@ -155,7 +155,7 @@ export default function SessionResultsPage({ session, onRetake, onBackToDashboar
               <div
                 key={item.questionId || idx}
                 className={`glass-panel rounded-2xl p-4 sm:p-5 border transition-all ${
-                  item.isCorrect ? 'border-emerald-500/40' : 'border-rose-500/40'
+                  item.isCorrect ? 'border-violet-500/40' : 'border-rose-500/40'
                 }`}
               >
                 <div
@@ -165,7 +165,7 @@ export default function SessionResultsPage({ session, onRetake, onBackToDashboar
                   <div className="flex items-start space-x-3">
                     <div className="mt-0.5">
                       {item.isCorrect ? (
-                        <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                        <CheckCircle2 className="w-5 h-5 text-violet-600 dark:text-violet-400 shrink-0" />
                       ) : (
                         <XCircle className="w-5 h-5 text-rose-600 dark:text-rose-400 shrink-0" />
                       )}
@@ -173,7 +173,7 @@ export default function SessionResultsPage({ session, onRetake, onBackToDashboar
                     <div>
                       <div className="flex flex-wrap items-center gap-2 mb-1">
                         <span className="text-xs font-bold text-slate-500 dark:text-slate-400">Q{idx + 1}</span>
-                        <span className="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-[10px] text-emerald-700 dark:text-emerald-400 font-semibold uppercase">
+                        <span className="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-[10px] text-violet-700 dark:text-violet-300 font-semibold uppercase">
                           {item.domain}
                         </span>
                       </div>
@@ -195,7 +195,7 @@ export default function SessionResultsPage({ session, onRetake, onBackToDashboar
                         const isCorrectKey = opt.key.toUpperCase() === item.correctAnswer.toUpperCase();
 
                         let optBadge = 'bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300';
-                        if (isCorrectKey) optBadge = 'bg-emerald-500/20 border-emerald-500 text-emerald-900 dark:text-emerald-200 font-bold';
+                        if (isCorrectKey) optBadge = 'bg-violet-500/20 border-violet-500 text-violet-900 dark:text-violet-200 font-bold';
                         else if (isSelected && !item.isCorrect) optBadge = 'bg-rose-500/20 border-rose-500 text-rose-900 dark:text-rose-200 font-bold';
 
                         return (
@@ -205,7 +205,7 @@ export default function SessionResultsPage({ session, onRetake, onBackToDashboar
                               <span className="leading-snug">{opt.text}</span>
                             </div>
                             <div className="shrink-0 self-end sm:self-auto">
-                              {isCorrectKey && <span className="text-[10px] bg-emerald-500 text-slate-950 font-bold px-2 py-0.5 rounded-md">Correct Choice</span>}
+                              {isCorrectKey && <span className="text-[10px] bg-violet-600 text-white font-bold px-2 py-0.5 rounded-md">Correct Choice</span>}
                               {isSelected && !isCorrectKey && <span className="text-[10px] bg-rose-500 text-slate-100 font-bold px-2 py-0.5 rounded-md">Your Choice</span>}
                             </div>
                           </div>
@@ -215,7 +215,7 @@ export default function SessionResultsPage({ session, onRetake, onBackToDashboar
 
                     {/* Explanation */}
                     <div className="p-3.5 rounded-xl bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 leading-relaxed">
-                      <p className="font-bold text-emerald-700 dark:text-emerald-400 mb-1">📘 Scrum Guidance & Rationale:</p>
+                      <p className="font-bold text-violet-700 dark:text-violet-300 mb-1">📘 Scrum Guidance & Rationale:</p>
                       <p>{item.explanation}</p>
                     </div>
                   </div>

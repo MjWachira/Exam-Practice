@@ -80,7 +80,7 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] space-y-4 px-4 text-center">
-        <div className="w-12 h-12 rounded-full border-4 border-emerald-500/20 border-t-emerald-500 animate-spin"></div>
+        <div className="w-12 h-12 rounded-full border-4 border-violet-500/20 border-t-violet-500 animate-spin"></div>
         <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">Loading CSM Exam Questions from Excel sheet...</p>
       </div>
     );
@@ -116,7 +116,7 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
             End Exam
           </button>
 
-          <span className="hidden md:inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30 text-[11px] font-extrabold uppercase">
+          <span className="hidden md:inline-block px-3 py-1 rounded-full bg-violet-500/10 text-violet-700 dark:text-violet-300 border border-violet-500/30 text-[11px] font-extrabold uppercase">
             {config.mode === 'simulated' ? '60-Min Exam Simulator' : 'Practice Mode'}
           </span>
         </div>
@@ -135,7 +135,7 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
             onClick={() => setShowDrawer(!showDrawer)}
             className="flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-[11px] sm:text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
           >
-            <LayoutGrid className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+            <LayoutGrid className="w-4 h-4 text-violet-600 dark:text-violet-400" />
             <span className="hidden sm:inline">Questions</span>
             <span className="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">({answeredCount}/{questions.length})</span>
           </button>
@@ -155,7 +155,7 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
       {/* PROGRESS BAR */}
       <div className="w-full bg-slate-200 dark:bg-slate-900 rounded-full h-2 overflow-hidden border border-slate-300 dark:border-slate-800">
         <div
-          className="bg-gradient-to-r from-emerald-500 to-teal-400 h-full transition-all duration-300"
+          className="bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-400 h-full transition-all duration-300"
           style={{ width: `${progressPercent}%` }}
         ></div>
       </div>
@@ -203,7 +203,7 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
         ) : (
           <button
             onClick={() => setShowConfirmModal(true)}
-            className="w-full sm:w-auto flex items-center justify-center space-x-2 px-6 py-3 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 font-extrabold text-xs shadow-lg shadow-emerald-500/20"
+            className="w-full sm:w-auto flex items-center justify-center space-x-2 px-6 py-3 rounded-2xl gradient-btn text-xs font-bold"
           >
             <span>Review & Submit</span>
             <Send className="w-4 h-4" />
@@ -229,8 +229,8 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
                 const isCurr = idx === currentIndex;
 
                 let btnStyle = 'bg-slate-100 dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-400';
-                if (isAns) btnStyle = 'bg-emerald-500/20 border-emerald-500 text-emerald-800 dark:text-emerald-300 font-bold';
-                if (isCurr) btnStyle = 'ring-2 ring-emerald-500 bg-emerald-500 text-slate-950 font-extrabold';
+                if (isAns) btnStyle = 'bg-violet-500/20 border-violet-500 text-violet-900 dark:text-violet-200 font-bold';
+                if (isCurr) btnStyle = 'ring-2 ring-violet-500 bg-violet-600 text-white font-extrabold';
 
                 return (
                   <button
@@ -257,7 +257,7 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
             <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100">Submit Exam for Grading?</h3>
             
             <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-              You have answered <span className="text-emerald-600 dark:text-emerald-400 font-bold">{answeredCount}</span> of <span className="text-slate-900 dark:text-slate-100 font-bold">{questions.length}</span> questions.
+              You have answered <span className="text-violet-600 dark:text-violet-400 font-bold">{answeredCount}</span> of <span className="text-slate-900 dark:text-slate-100 font-bold">{questions.length}</span> questions.
               {answeredCount < questions.length && (
                 <span className="block text-amber-600 dark:text-amber-400 font-semibold mt-1">⚠️ You still have unanswered questions!</span>
               )}

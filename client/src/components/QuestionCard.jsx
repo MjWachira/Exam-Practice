@@ -18,14 +18,14 @@ export default function QuestionCard({
   const isCorrect = isPracticeMode && isAnswered && selectedOption.toUpperCase() === question.correctAnswer.toUpperCase();
 
   return (
-    <div className="glass-panel rounded-3xl p-6 sm:p-8 relative border border-slate-200/80 dark:border-slate-700/60 shadow-2xl transition-all">
+    <div className="glass-panel rounded-3xl p-5 sm:p-8 relative border border-slate-200/80 dark:border-slate-700/60 shadow-2xl transition-all">
       
       {/* Header Meta Info */}
       <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-slate-200 dark:border-slate-800">
         
-        {/* Domain Badge & Question Counter */}
+        {/* Domain Badge & Difficulty */}
         <div className="flex items-center space-x-3">
-          <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider">
+          <span className="px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/30 text-violet-700 dark:text-violet-300 text-xs font-bold uppercase tracking-wider">
             {question.domain || 'Scrum Knowledge'}
           </span>
           <span className="px-2.5 py-0.5 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-400 text-xs font-semibold">
@@ -56,7 +56,7 @@ export default function QuestionCard({
 
       {/* Question Text */}
       <div className="mb-8">
-        <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100 leading-relaxed tracking-tight">
+        <h2 className="text-base sm:text-xl font-bold text-slate-900 dark:text-slate-100 leading-relaxed tracking-tight">
           {question.question}
         </h2>
       </div>
@@ -65,12 +65,12 @@ export default function QuestionCard({
       <div className="space-y-3.5 mb-8">
         {question.options.map((opt) => {
           const isSelected = selectedOption === opt.key;
-          let optionStyle = 'bg-slate-100/70 dark:bg-slate-900/60 border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-slate-200/60 dark:hover:bg-slate-800/50';
+          let optionStyle = 'bg-slate-100/70 dark:bg-slate-900/60 border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-300 hover:border-violet-300 dark:hover:border-violet-700 hover:bg-slate-200/60 dark:hover:bg-slate-800/50';
           let keyBadgeStyle = 'bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-400 border-slate-300 dark:border-slate-700';
 
           if (isSelected) {
-            optionStyle = 'bg-emerald-500/10 border-emerald-500 text-emerald-800 dark:text-emerald-300 shadow-md shadow-emerald-500/10 font-medium';
-            keyBadgeStyle = 'bg-emerald-500 text-slate-950 border-emerald-400 font-extrabold';
+            optionStyle = 'bg-violet-500/15 border-violet-500 text-violet-900 dark:text-violet-200 ring-2 ring-violet-500/40 shadow-md shadow-violet-500/10 font-semibold';
+            keyBadgeStyle = 'bg-gradient-to-tr from-violet-600 to-indigo-500 text-white font-extrabold border-transparent';
           }
 
           if (isPracticeMode && showInstantFeedback && isAnswered) {
@@ -87,17 +87,17 @@ export default function QuestionCard({
             <button
               key={opt.key}
               onClick={() => onSelectOption(question.id, opt.key)}
-              className={`w-full text-left p-4 rounded-2xl border transition-all duration-200 flex items-center justify-between group ${optionStyle}`}
+              className={`w-full text-left p-3.5 sm:p-4 rounded-2xl border transition-all duration-200 flex items-center justify-between group ${optionStyle}`}
             >
-              <div className="flex items-center space-x-4">
-                <span className={`w-8 h-8 rounded-xl border flex items-center justify-center text-xs transition-colors shrink-0 ${keyBadgeStyle}`}>
+              <div className="flex items-center space-x-3.5">
+                <span className={`w-7 h-7 sm:w-8 sm:h-8 rounded-xl border flex items-center justify-center text-xs transition-colors shrink-0 ${keyBadgeStyle}`}>
                   {opt.key}
                 </span>
-                <span className="text-sm font-medium leading-normal">{opt.text}</span>
+                <span className="text-xs sm:text-sm font-medium leading-normal">{opt.text}</span>
               </div>
 
               {isPracticeMode && showInstantFeedback && isAnswered && (
-                <div>
+                <div className="shrink-0 ml-2">
                   {opt.key.toUpperCase() === question.correctAnswer.toUpperCase() && (
                     <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                   )}
@@ -119,7 +119,7 @@ export default function QuestionCard({
             : 'bg-amber-500/10 border-amber-500/30 text-amber-800 dark:text-amber-300'
         }`}>
           <div className="flex items-center space-x-2 font-bold text-xs uppercase tracking-wider mb-2">
-            <Info className="w-4 h-4" />
+            <Info className="w-4 h-4 shrink-0" />
             <span>Official Scrum Alliance Explanation</span>
           </div>
           <p className="text-xs text-slate-700 dark:text-slate-200 leading-relaxed">

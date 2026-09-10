@@ -38,18 +38,18 @@ export default function Timer({ initialSeconds = 3600, isCountDown = true, onTim
   return (
     <div className={`flex items-center space-x-2 px-3.5 py-1.5 rounded-xl border text-xs font-bold transition-all ${
       isCriticalTime
-        ? 'bg-rose-500/20 text-rose-300 border-rose-500/50 animate-pulse'
+        ? 'bg-rose-500/20 text-rose-700 dark:text-rose-300 border-rose-500/50 animate-pulse'
         : isLowTime
-        ? 'bg-amber-500/20 text-amber-300 border-amber-500/50'
-        : 'bg-slate-900/80 text-emerald-400 border-slate-700/60'
+        ? 'bg-amber-500/20 text-amber-700 dark:text-amber-300 border-amber-500/50'
+        : 'bg-violet-500/10 text-violet-700 dark:text-violet-300 border-violet-500/30'
     }`}>
       {isCriticalTime ? (
-        <AlertTriangle className="w-4 h-4 text-rose-400" />
+        <AlertTriangle className="w-4 h-4 text-rose-600 dark:text-rose-400" />
       ) : (
-        <Clock className="w-4 h-4 text-emerald-400" />
+        <Clock className="w-4 h-4 text-violet-600 dark:text-violet-400" />
       )}
       <span className="font-mono text-sm tracking-wider">{formatTime(secondsLeft)}</span>
-      <span className="text-[10px] uppercase text-slate-400 font-normal">
+      <span className="text-[10px] uppercase text-slate-500 dark:text-slate-400 font-normal">
         {isCountDown ? 'Remaining' : 'Elapsed'}
       </span>
     </div>

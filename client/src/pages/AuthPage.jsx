@@ -55,8 +55,8 @@ export default function AuthPage({ isOpen, onClose, onSuccess }) {
         
         {/* Header Branding */}
         <div className="text-center mb-6">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-400 mx-auto flex items-center justify-center shadow-lg shadow-emerald-500/20 mb-3">
-            <ShieldCheck className="w-7 h-7 text-slate-950 font-bold" />
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-violet-600 via-indigo-600 to-cyan-400 mx-auto flex items-center justify-center shadow-lg shadow-indigo-500/25 mb-3">
+            <ShieldCheck className="w-7 h-7 text-white font-bold" />
           </div>
           <h2 className="text-2xl font-extrabold text-slate-900 dark:text-slate-100">
             {isLoginMode ? 'Welcome Back!' : 'Create Candidate Account'}
@@ -72,7 +72,7 @@ export default function AuthPage({ isOpen, onClose, onSuccess }) {
             type="button"
             onClick={() => { setIsLoginMode(true); setError(''); }}
             className={`py-2 text-xs font-bold rounded-lg transition-all ${
-              isLoginMode ? 'bg-emerald-500 text-slate-950 shadow-md' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
+              isLoginMode ? 'bg-violet-600 text-white shadow-md' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
             }`}
           >
             Sign In
@@ -81,7 +81,7 @@ export default function AuthPage({ isOpen, onClose, onSuccess }) {
             type="button"
             onClick={() => { setIsLoginMode(false); setError(''); }}
             className={`py-2 text-xs font-bold rounded-lg transition-all ${
-              !isLoginMode ? 'bg-emerald-500 text-slate-950 shadow-md' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
+              !isLoginMode ? 'bg-violet-600 text-white shadow-md' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
             }`}
           >
             Register
@@ -109,7 +109,7 @@ export default function AuthPage({ isOpen, onClose, onSuccess }) {
                   placeholder="e.g. Wachira Scrum Master"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full bg-slate-50 dark:bg-slate-900/80 border border-slate-300 dark:border-slate-700/80 rounded-xl pl-10 pr-4 py-2.5 text-xs text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-emerald-500 focus:outline-none transition-colors"
+                  className="w-full bg-slate-50 dark:bg-slate-900/80 border border-slate-300 dark:border-slate-700/80 rounded-xl pl-10 pr-4 py-2.5 text-xs text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-violet-500 focus:outline-none transition-colors"
                 />
               </div>
             </div>
@@ -125,7 +125,7 @@ export default function AuthPage({ isOpen, onClose, onSuccess }) {
                 placeholder="name@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-slate-50 dark:bg-slate-900/80 border border-slate-300 dark:border-slate-700/80 rounded-xl pl-10 pr-4 py-2.5 text-xs text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-emerald-500 focus:outline-none transition-colors"
+                className="w-full bg-slate-50 dark:bg-slate-900/80 border border-slate-300 dark:border-slate-700/80 rounded-xl pl-10 pr-4 py-2.5 text-xs text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-violet-500 focus:outline-none transition-colors"
               />
             </div>
           </div>
@@ -140,7 +140,7 @@ export default function AuthPage({ isOpen, onClose, onSuccess }) {
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-slate-50 dark:bg-slate-900/80 border border-slate-300 dark:border-slate-700/80 rounded-xl pl-10 pr-4 py-2.5 text-xs text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-emerald-500 focus:outline-none transition-colors"
+                className="w-full bg-slate-50 dark:bg-slate-900/80 border border-slate-300 dark:border-slate-700/80 rounded-xl pl-10 pr-4 py-2.5 text-xs text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-violet-500 focus:outline-none transition-colors"
               />
             </div>
           </div>
