@@ -35,10 +35,10 @@ export default function SessionHistoryPage({ onViewSessionDetail }) {
     <div className="space-y-8 pb-16 animate-fade-in">
       
       {/* Header */}
-      <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-700/60 shadow-2xl flex flex-wrap items-center justify-between gap-4">
+      <div className="glass-panel p-8 rounded-3xl border border-slate-200 dark:border-slate-700/60 shadow-2xl flex flex-wrap items-center justify-between gap-4">
         <div>
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-violet-500/10 text-violet-700 dark:text-violet-300 text-xs font-bold uppercase tracking-wider mb-2">
-            <History className="w-4 h-4 text-violet-600 dark:text-violet-400" />
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">
+            <History className="w-4 h-4" />
             <span>Logged-in Session Records</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100">Exam Attempt History</h1>
@@ -49,13 +49,13 @@ export default function SessionHistoryPage({ onViewSessionDetail }) {
         <div className="flex flex-wrap items-center gap-2 bg-slate-100 dark:bg-slate-900 p-1.5 rounded-xl border border-slate-200 dark:border-slate-800 text-xs font-bold">
           <button
             onClick={() => setFilterMode('all')}
-            className={`px-3 py-1.5 rounded-lg transition-all ${filterMode === 'all' ? 'bg-violet-600 text-white' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'}`}
+            className={`px-3 py-1.5 rounded-lg transition-all ${filterMode === 'all' ? 'bg-emerald-500 text-slate-950' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'}`}
           >
             All Sessions ({sessions.length})
           </button>
           <button
             onClick={() => setFilterMode('passed')}
-            className={`px-3 py-1.5 rounded-lg transition-all ${filterMode === 'passed' ? 'bg-violet-600 text-white' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'}`}
+            className={`px-3 py-1.5 rounded-lg transition-all ${filterMode === 'passed' ? 'bg-emerald-500 text-slate-950' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'}`}
           >
             Passed ({sessions.filter(s => s.passed).length})
           </button>
@@ -71,7 +71,7 @@ export default function SessionHistoryPage({ onViewSessionDetail }) {
       {/* SESSIONS TABLE / CARDS */}
       {loading ? (
         <div className="flex justify-center p-12">
-          <div className="w-10 h-10 rounded-full border-4 border-violet-500/20 border-t-violet-500 animate-spin"></div>
+          <div className="w-10 h-10 rounded-full border-4 border-emerald-500/20 border-t-emerald-500 animate-spin"></div>
         </div>
       ) : filteredSessions.length === 0 ? (
         <div className="glass-panel p-12 rounded-3xl text-center space-y-3">
@@ -90,12 +90,12 @@ export default function SessionHistoryPage({ onViewSessionDetail }) {
               <div
                 key={sess.id}
                 onClick={() => onViewSessionDetail(sess)}
-                className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-violet-500/40 cursor-pointer transition-all duration-200 flex flex-wrap items-center justify-between gap-4 group"
+                className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-emerald-500/40 cursor-pointer transition-all duration-200 flex flex-wrap items-center justify-between gap-4 group"
               >
                 
                 <div className="flex items-center space-x-4">
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold text-sm shrink-0 ${
-                    sess.passed ? 'bg-violet-500/10 text-violet-700 dark:text-violet-300 border border-violet-500/30' : 'bg-rose-500/10 text-rose-700 dark:text-rose-400 border border-rose-500/30'
+                    sess.passed ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30' : 'bg-rose-500/10 text-rose-700 dark:text-rose-400 border border-rose-500/30'
                   }`}>
                     {sess.scorePercentage}%
                   </div>
@@ -103,7 +103,7 @@ export default function SessionHistoryPage({ onViewSessionDetail }) {
                   <div>
                     <div className="flex items-center space-x-2 mb-1">
                       <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase ${
-                        sess.passed ? 'bg-violet-500/20 text-violet-900 dark:text-violet-200' : 'bg-rose-500/20 text-rose-800 dark:text-rose-300'
+                        sess.passed ? 'bg-emerald-500/20 text-emerald-800 dark:text-emerald-300' : 'bg-rose-500/20 text-rose-800 dark:text-rose-300'
                       }`}>
                         {sess.passed ? 'PASSED' : 'FAILED'}
                       </span>
@@ -124,7 +124,7 @@ export default function SessionHistoryPage({ onViewSessionDetail }) {
                     <p className="font-bold">{minutes}m {seconds}s</p>
                   </div>
 
-                  <div className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 group-hover:bg-violet-600 group-hover:text-white transition-colors">
+                  <div className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
                     <Eye className="w-4 h-4" />
                   </div>
                 </div>

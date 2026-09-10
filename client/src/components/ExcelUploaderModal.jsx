@@ -63,7 +63,7 @@ export default function ExcelUploaderModal({ isOpen, onClose, onRefreshQuestions
 
         {/* Header */}
         <div className="flex items-center space-x-3 mb-5">
-          <div className="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/30 flex items-center justify-center text-violet-600 dark:text-violet-400">
+          <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
             <FileSpreadsheet className="w-6 h-6" />
           </div>
           <div>
@@ -74,7 +74,7 @@ export default function ExcelUploaderModal({ isOpen, onClose, onRefreshQuestions
 
         {/* Info Banner */}
         <div className="mb-6 p-4 rounded-xl bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
-          <p className="font-semibold text-violet-700 dark:text-violet-300 mb-1">📋 Supported Excel Format (.xlsx):</p>
+          <p className="font-semibold text-emerald-600 dark:text-emerald-400 mb-1">📋 Supported Excel Format (.xlsx):</p>
           <p>Spreadsheets must contain columns for <span className="text-slate-900 dark:text-slate-100 font-mono">ID, Question, Option A, Option B, Option C, Option D, Correct Answer, Explanation, Domain</span>.</p>
         </div>
 
@@ -86,7 +86,7 @@ export default function ExcelUploaderModal({ isOpen, onClose, onRefreshQuestions
           </div>
           <button
             onClick={handleDownloadTemplate}
-            className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-violet-500/10 hover:bg-violet-500/20 text-violet-700 dark:text-violet-300 border border-violet-500/30 text-xs font-semibold transition-all"
+            className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30 text-xs font-semibold transition-all"
           >
             <Download className="w-3.5 h-3.5" />
             <span>Download .xlsx</span>
@@ -95,7 +95,7 @@ export default function ExcelUploaderModal({ isOpen, onClose, onRefreshQuestions
 
         {/* Form Upload */}
         <form onSubmit={handleUpload} className="space-y-4">
-          <div className="border-2 border-dashed border-slate-300 dark:border-slate-700/80 rounded-2xl p-6 text-center hover:border-violet-500/50 transition-colors bg-slate-50 dark:bg-slate-900/40">
+          <div className="border-2 border-dashed border-slate-300 dark:border-slate-700/80 rounded-2xl p-6 text-center hover:border-emerald-500/50 transition-colors bg-slate-50 dark:bg-slate-900/40">
             <input
               type="file"
               accept=".xlsx, .xls"
@@ -104,7 +104,7 @@ export default function ExcelUploaderModal({ isOpen, onClose, onRefreshQuestions
               className="hidden"
             />
             <label htmlFor="excel-file-input" className="cursor-pointer flex flex-col items-center">
-              <Upload className="w-8 h-8 text-violet-600 dark:text-violet-400 mb-2 animate-bounce" />
+              <Upload className="w-8 h-8 text-emerald-600 dark:text-emerald-400 mb-2 animate-bounce" />
               <span className="text-sm font-semibold text-slate-800 dark:text-slate-200">
                 {file ? file.name : 'Click to select Excel file (.xlsx)'}
               </span>

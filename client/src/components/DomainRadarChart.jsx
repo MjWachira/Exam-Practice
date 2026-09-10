@@ -27,7 +27,7 @@ export default function DomainRadarChart({ domainBreakdown }) {
   }));
 
   const getColor = (pct) => {
-    if (pct >= 80) return '#8b5cf6'; // electric violet
+    if (pct >= 80) return '#10b981'; // emerald
     if (pct >= 70) return '#06b6d4'; // cyan
     if (pct >= 50) return '#f59e0b'; // amber
     return '#f43f5e'; // rose
@@ -42,7 +42,7 @@ export default function DomainRadarChart({ domainBreakdown }) {
       {/* Radar Chart */}
       <div className="glass-panel p-5 rounded-2xl flex flex-col items-center">
         <h4 className="text-sm font-bold text-slate-800 dark:text-slate-200 mb-2 self-start flex items-center space-x-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-violet-500"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
           <span>Scrum Competency Radar</span>
         </h4>
         <div className="w-full h-64">
@@ -54,9 +54,9 @@ export default function DomainRadarChart({ domainBreakdown }) {
               <Radar
                 name="Score %"
                 dataKey="percentage"
-                stroke="#8b5cf6"
-                fill="#8b5cf6"
-                fillOpacity={isDark ? 0.4 : 0.5}
+                stroke="#10b981"
+                fill="#10b981"
+                fillOpacity={isDark ? 0.35 : 0.45}
               />
             </RadarChart>
           </ResponsiveContainer>
@@ -66,7 +66,7 @@ export default function DomainRadarChart({ domainBreakdown }) {
       {/* Bar Chart Breakdown */}
       <div className="glass-panel p-5 rounded-2xl flex flex-col justify-between">
         <h4 className="text-sm font-bold text-slate-800 dark:text-slate-200 mb-2 flex items-center space-x-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-cyan-500"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-teal-500"></span>
           <span>Domain Performance Score (%)</span>
         </h4>
         <div className="w-full h-64">

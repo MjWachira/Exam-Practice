@@ -23,12 +23,12 @@ export default function Navbar({ activeTab, setActiveTab, onOpenExcelModal, onOp
             onClick={() => handleNavClick('dashboard')}
             className="flex items-center space-x-3 cursor-pointer group"
           >
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-violet-600 via-indigo-600 to-cyan-400 flex items-center justify-center shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition-transform duration-300 shrink-0">
-              <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-white font-bold" />
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform duration-300 shrink-0">
+              <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-slate-950 font-bold" />
             </div>
             <div>
               <span className="text-lg sm:text-xl font-extrabold tracking-tight gradient-text">ScrumMaster Pro</span>
-              <span className="hidden xs:block text-[9px] sm:text-[10px] uppercase tracking-widest text-violet-600 dark:text-violet-400 font-semibold">CSM Alliance Exam Prep</span>
+              <span className="hidden xs:block text-[9px] sm:text-[10px] uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-semibold">CSM Alliance Exam Prep</span>
             </div>
           </div>
 
@@ -38,11 +38,11 @@ export default function Navbar({ activeTab, setActiveTab, onOpenExcelModal, onOp
               onClick={() => handleNavClick('dashboard')}
               className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 ${
                 activeTab === 'dashboard'
-                  ? 'bg-violet-500/10 text-violet-700 dark:text-violet-300 border border-violet-500/30'
+                  ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30'
                   : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800/50'
               }`}
             >
-              <LayoutDashboard className="w-4 h-4 text-violet-600 dark:text-violet-400" />
+              <LayoutDashboard className="w-4 h-4" />
               <span>Practice Dashboard</span>
             </button>
 
@@ -51,20 +51,20 @@ export default function Navbar({ activeTab, setActiveTab, onOpenExcelModal, onOp
                 onClick={() => handleNavClick('history')}
                 className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 ${
                   activeTab === 'history'
-                    ? 'bg-violet-500/10 text-violet-700 dark:text-violet-300 border border-violet-500/30'
+                    ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30'
                     : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800/50'
                 }`}
               >
-                <History className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
+                <History className="w-4 h-4" />
                 <span>Session History</span>
               </button>
             )}
 
             <button
               onClick={onOpenExcelModal}
-              className="flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-violet-600 dark:hover:text-violet-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-all duration-200 border border-slate-200 dark:border-slate-700/50"
+              className="flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-all duration-200 border border-slate-200 dark:border-slate-700/50"
             >
-              <FileSpreadsheet className="w-4 h-4 text-violet-600 dark:text-violet-400" />
+              <FileSpreadsheet className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
               <span>Excel Question Bank</span>
             </button>
           </nav>
@@ -87,7 +87,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenExcelModal, onOp
 
             {user ? (
               <div className="flex items-center space-x-2 sm:space-x-3 bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-700/60 rounded-xl px-2.5 sm:px-3 py-1.5">
-                <div className="w-7 h-7 rounded-lg bg-violet-500/20 text-violet-700 dark:text-violet-300 flex items-center justify-center font-bold text-xs">
+                <div className="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 flex items-center justify-center font-bold text-xs">
                   {user.name ? user.name.charAt(0).toUpperCase() : 'U'}
                 </div>
                 <div className="hidden lg:block text-left">
@@ -133,11 +133,11 @@ export default function Navbar({ activeTab, setActiveTab, onOpenExcelModal, onOp
             onClick={() => handleNavClick('dashboard')}
             className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
               activeTab === 'dashboard'
-                ? 'bg-violet-500/10 text-violet-700 dark:text-violet-300 border border-violet-500/30'
+                ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30'
                 : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/50'
             }`}
           >
-            <LayoutDashboard className="w-5 h-5 text-violet-600 dark:text-violet-400" />
+            <LayoutDashboard className="w-5 h-5" />
             <span>Practice Dashboard</span>
           </button>
 
@@ -146,11 +146,11 @@ export default function Navbar({ activeTab, setActiveTab, onOpenExcelModal, onOp
               onClick={() => handleNavClick('history')}
               className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
                 activeTab === 'history'
-                  ? 'bg-violet-500/10 text-violet-700 dark:text-violet-300 border border-violet-500/30'
+                  ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30'
                   : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/50'
               }`}
             >
-              <History className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
+              <History className="w-5 h-5" />
               <span>Session History</span>
             </button>
           )}
@@ -159,7 +159,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenExcelModal, onOp
             onClick={() => { onOpenExcelModal(); setMobileMenuOpen(false); }}
             className="w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800/50"
           >
-            <FileSpreadsheet className="w-5 h-5 text-violet-600 dark:text-violet-400" />
+            <FileSpreadsheet className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
             <span>Excel Question Bank</span>
           </button>
         </div>
