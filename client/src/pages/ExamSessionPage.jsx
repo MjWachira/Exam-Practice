@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Bookmark, AlertCircle, CheckCircle, Send, LayoutGrid, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, AlertCircle, Send, LayoutGrid, X } from 'lucide-react';
 import QuestionCard from '../components/QuestionCard';
 import Timer from '../components/Timer';
 import { fetchQuestions, submitExamSession } from '../services/api';
@@ -81,7 +81,7 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] space-y-4">
         <div className="w-12 h-12 rounded-full border-4 border-emerald-500/20 border-t-emerald-500 animate-spin"></div>
-        <p className="text-sm font-semibold text-slate-300">Loading CSM Exam Questions from Excel sheet...</p>
+        <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">Loading CSM Exam Questions from Excel sheet...</p>
       </div>
     );
   }
@@ -89,9 +89,9 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
   if (questions.length === 0) {
     return (
       <div className="glass-panel p-8 rounded-3xl text-center space-y-4 max-w-md mx-auto my-12">
-        <AlertCircle className="w-12 h-12 text-rose-400 mx-auto" />
-        <h3 className="text-lg font-bold text-slate-100">No Questions Found</h3>
-        <p className="text-xs text-slate-400">No questions matched the selected domain or Excel file.</p>
+        <AlertCircle className="w-12 h-12 text-rose-500 mx-auto" />
+        <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">No Questions Found</h3>
+        <p className="text-xs text-slate-600 dark:text-slate-400">No questions matched the selected domain or Excel file.</p>
         <button onClick={onCancel} className="gradient-btn px-6 py-2.5 rounded-xl text-xs">Return to Dashboard</button>
       </div>
     );
@@ -105,18 +105,18 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
     <div className="max-w-4xl mx-auto space-y-6 pb-20 animate-fade-in relative">
       
       {/* EXAM TOP CONTROL HEADER */}
-      <div className="glass-panel p-4 rounded-2xl border border-slate-800 flex items-center justify-between gap-4 sticky top-20 z-30 bg-slate-950/90 backdrop-blur-xl">
+      <div className="glass-panel p-4 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-4 sticky top-20 z-30 bg-white/90 dark:bg-slate-950/90 backdrop-blur-xl">
         
         {/* Left: Mode Badge & Cancel */}
         <div className="flex items-center space-x-3">
           <button
             onClick={() => setShowConfirmModal(true)}
-            className="text-xs font-semibold text-slate-400 hover:text-rose-400 px-3 py-1.5 rounded-xl border border-slate-800 hover:border-rose-500/30 transition-colors"
+            className="text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-rose-500/30 transition-colors"
           >
             End Exam
           </button>
 
-          <span className="hidden sm:inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[11px] font-extrabold uppercase">
+          <span className="hidden sm:inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30 text-[11px] font-extrabold uppercase">
             {config.mode === 'simulated' ? '60-Min Exam Simulator' : 'Practice Mode'}
           </span>
         </div>
@@ -133,11 +133,11 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
         <div className="flex items-center space-x-2">
           <button
             onClick={() => setShowDrawer(!showDrawer)}
-            className="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-semibold hover:bg-slate-700 transition-colors"
+            className="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
           >
-            <LayoutGrid className="w-4 h-4 text-emerald-400" />
+            <LayoutGrid className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
             <span className="hidden sm:inline">Questions</span>
-            <span className="text-[11px] text-slate-400">({answeredCount}/{questions.length})</span>
+            <span className="text-[11px] text-slate-500 dark:text-slate-400">({answeredCount}/{questions.length})</span>
           </button>
 
           <button
@@ -153,7 +153,7 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
       </div>
 
       {/* PROGRESS BAR */}
-      <div className="w-full bg-slate-900 rounded-full h-2 overflow-hidden border border-slate-800">
+      <div className="w-full bg-slate-200 dark:bg-slate-900 rounded-full h-2 overflow-hidden border border-slate-300 dark:border-slate-800">
         <div
           className="bg-gradient-to-r from-emerald-500 to-teal-400 h-full transition-all duration-300"
           style={{ width: `${progressPercent}%` }}
@@ -180,15 +180,15 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
           disabled={currentIndex === 0}
           className={`flex items-center space-x-2 px-5 py-3 rounded-2xl text-xs font-bold transition-all ${
             currentIndex === 0
-              ? 'opacity-40 bg-slate-900 text-slate-600 cursor-not-allowed'
-              : 'bg-slate-800 text-slate-200 hover:bg-slate-700 border border-slate-700'
+              ? 'opacity-40 bg-slate-200 dark:bg-slate-900 text-slate-400 dark:text-slate-600 cursor-not-allowed'
+              : 'bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700'
           }`}
         >
           <ChevronLeft className="w-4 h-4" />
           <span>Previous</span>
         </button>
 
-        <span className="text-xs text-slate-400 font-semibold">
+        <span className="text-xs text-slate-600 dark:text-slate-400 font-semibold">
           {answeredCount} of {questions.length} Answered
         </span>
 
@@ -214,10 +214,10 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
       {/* QUESTION NAV DRAWER MODAL */}
       {showDrawer && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
-          <div className="glass-panel w-full max-w-xl rounded-3xl p-6 border border-slate-700 shadow-2xl relative max-h-[85vh] overflow-y-auto">
-            <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
-              <h3 className="text-base font-bold text-slate-100">Question Palette Navigation</h3>
-              <button onClick={() => setShowDrawer(false)} className="p-1.5 text-slate-400 hover:text-slate-100">
+          <div className="glass-panel w-full max-w-xl rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-2xl relative max-h-[85vh] overflow-y-auto">
+            <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-200 dark:border-slate-800">
+              <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">Question Palette Navigation</h3>
+              <button onClick={() => setShowDrawer(false)} className="p-1.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -228,9 +228,9 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
                 const isFlag = flaggedQuestions.has(q.id);
                 const isCurr = idx === currentIndex;
 
-                let btnStyle = 'bg-slate-900 border-slate-800 text-slate-400';
-                if (isAns) btnStyle = 'bg-emerald-500/20 border-emerald-500 text-emerald-300 font-bold';
-                if (isCurr) btnStyle = 'ring-2 ring-emerald-400 bg-emerald-500 text-slate-950 font-extrabold';
+                let btnStyle = 'bg-slate-100 dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-400';
+                if (isAns) btnStyle = 'bg-emerald-500/20 border-emerald-500 text-emerald-800 dark:text-emerald-300 font-bold';
+                if (isCurr) btnStyle = 'ring-2 ring-emerald-500 bg-emerald-500 text-slate-950 font-extrabold';
 
                 return (
                   <button
@@ -240,7 +240,7 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
                   >
                     {idx + 1}
                     {isFlag && (
-                      <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+                      <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-amber-500"></span>
                     )}
                   </button>
                 );
@@ -253,20 +253,20 @@ export default function ExamSessionPage({ config, onCompleteSession, onCancel })
       {/* SUBMIT CONFIRMATION MODAL */}
       {showConfirmModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md">
-          <div className="glass-panel w-full max-w-md rounded-3xl p-6 border border-slate-700 text-center space-y-4">
-            <h3 className="text-xl font-bold text-slate-100">Submit Exam for Grading?</h3>
+          <div className="glass-panel w-full max-w-md rounded-3xl p-6 border border-slate-200 dark:border-slate-700 text-center space-y-4">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">Submit Exam for Grading?</h3>
             
-            <p className="text-xs text-slate-300 leading-relaxed">
-              You have answered <span className="text-emerald-400 font-bold">{answeredCount}</span> of <span className="text-slate-100 font-bold">{questions.length}</span> questions.
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              You have answered <span className="text-emerald-600 dark:text-emerald-400 font-bold">{answeredCount}</span> of <span className="text-slate-900 dark:text-slate-100 font-bold">{questions.length}</span> questions.
               {answeredCount < questions.length && (
-                <span className="block text-amber-400 font-semibold mt-1">⚠️ You still have unanswered questions!</span>
+                <span className="block text-amber-600 dark:text-amber-400 font-semibold mt-1">⚠️ You still have unanswered questions!</span>
               )}
             </p>
 
             <div className="flex gap-3 pt-2">
               <button
                 onClick={() => setShowConfirmModal(false)}
-                className="w-1/2 py-2.5 rounded-xl border border-slate-700 bg-slate-900 text-slate-300 text-xs font-bold"
+                className="w-1/2 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 text-xs font-bold"
               >
                 Continue Exam
               </button>

@@ -50,29 +50,29 @@ export default function AuthPage({ isOpen, onClose, onSuccess }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md animate-fade-in">
-      <div className="relative w-full max-w-md glass-panel rounded-3xl p-6 sm:p-8 border border-slate-700/60 shadow-2xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md animate-fade-in">
+      <div className="relative w-full max-w-md glass-panel rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700/60 shadow-2xl">
         
         {/* Header Branding */}
         <div className="text-center mb-6">
           <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-400 mx-auto flex items-center justify-center shadow-lg shadow-emerald-500/20 mb-3">
             <ShieldCheck className="w-7 h-7 text-slate-950 font-bold" />
           </div>
-          <h2 className="text-2xl font-extrabold text-slate-100">
+          <h2 className="text-2xl font-extrabold text-slate-900 dark:text-slate-100">
             {isLoginMode ? 'Welcome Back!' : 'Create Candidate Account'}
           </h2>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
             Track exam scores & session history across sessions
           </p>
         </div>
 
         {/* Mode Switcher Tabs */}
-        <div className="grid grid-cols-2 p-1 rounded-xl bg-slate-900/90 border border-slate-800 mb-6">
+        <div className="grid grid-cols-2 p-1 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 mb-6">
           <button
             type="button"
             onClick={() => { setIsLoginMode(true); setError(''); }}
             className={`py-2 text-xs font-bold rounded-lg transition-all ${
-              isLoginMode ? 'bg-emerald-500 text-slate-950 shadow-md' : 'text-slate-400 hover:text-slate-200'
+              isLoginMode ? 'bg-emerald-500 text-slate-950 shadow-md' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
             }`}
           >
             Sign In
@@ -81,7 +81,7 @@ export default function AuthPage({ isOpen, onClose, onSuccess }) {
             type="button"
             onClick={() => { setIsLoginMode(false); setError(''); }}
             className={`py-2 text-xs font-bold rounded-lg transition-all ${
-              !isLoginMode ? 'bg-emerald-500 text-slate-950 shadow-md' : 'text-slate-400 hover:text-slate-200'
+              !isLoginMode ? 'bg-emerald-500 text-slate-950 shadow-md' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
             }`}
           >
             Register
@@ -90,7 +90,7 @@ export default function AuthPage({ isOpen, onClose, onSuccess }) {
 
         {/* Error Alert */}
         {error && (
-          <div className="mb-4 p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs">
+          <div className="mb-4 p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-600 dark:text-rose-400 text-xs">
             {error}
           </div>
         )}
@@ -100,7 +100,7 @@ export default function AuthPage({ isOpen, onClose, onSuccess }) {
           
           {!isLoginMode && (
             <div>
-              <label className="block text-xs font-semibold text-slate-300 mb-1.5">Full Name</label>
+              <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Full Name</label>
               <div className="relative">
                 <User className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
                 <input
@@ -109,14 +109,14 @@ export default function AuthPage({ isOpen, onClose, onSuccess }) {
                   placeholder="e.g. Wachira Scrum Master"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full bg-slate-900/80 border border-slate-700/80 rounded-xl pl-10 pr-4 py-2.5 text-xs text-slate-100 placeholder-slate-500 focus:border-emerald-500 focus:outline-none transition-colors"
+                  className="w-full bg-slate-50 dark:bg-slate-900/80 border border-slate-300 dark:border-slate-700/80 rounded-xl pl-10 pr-4 py-2.5 text-xs text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-emerald-500 focus:outline-none transition-colors"
                 />
               </div>
             </div>
           )}
 
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1.5">Email Address</label>
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Email Address</label>
             <div className="relative">
               <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
               <input
@@ -125,13 +125,13 @@ export default function AuthPage({ isOpen, onClose, onSuccess }) {
                 placeholder="name@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-slate-900/80 border border-slate-700/80 rounded-xl pl-10 pr-4 py-2.5 text-xs text-slate-100 placeholder-slate-500 focus:border-emerald-500 focus:outline-none transition-colors"
+                className="w-full bg-slate-50 dark:bg-slate-900/80 border border-slate-300 dark:border-slate-700/80 rounded-xl pl-10 pr-4 py-2.5 text-xs text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-emerald-500 focus:outline-none transition-colors"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1.5">Password</label>
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Password</label>
             <div className="relative">
               <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
               <input
@@ -140,7 +140,7 @@ export default function AuthPage({ isOpen, onClose, onSuccess }) {
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-slate-900/80 border border-slate-700/80 rounded-xl pl-10 pr-4 py-2.5 text-xs text-slate-100 placeholder-slate-500 focus:border-emerald-500 focus:outline-none transition-colors"
+                className="w-full bg-slate-50 dark:bg-slate-900/80 border border-slate-300 dark:border-slate-700/80 rounded-xl pl-10 pr-4 py-2.5 text-xs text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:border-emerald-500 focus:outline-none transition-colors"
               />
             </div>
           </div>
@@ -156,8 +156,8 @@ export default function AuthPage({ isOpen, onClose, onSuccess }) {
         </form>
 
         <div className="relative my-6 text-center">
-          <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-slate-800"></div></div>
-          <span className="relative bg-slate-900 px-3 text-[11px] text-slate-400 uppercase tracking-widest">Or Instant Test</span>
+          <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-slate-200 dark:border-slate-800"></div></div>
+          <span className="relative bg-white dark:bg-slate-900 px-3 text-[11px] text-slate-500 dark:text-slate-400 uppercase tracking-widest">Or Instant Test</span>
         </div>
 
         {/* Quick Guest Login button */}
@@ -165,9 +165,9 @@ export default function AuthPage({ isOpen, onClose, onSuccess }) {
           type="button"
           onClick={handleGuestAccess}
           disabled={loading}
-          className="w-full py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700/60 text-slate-200 text-xs font-bold flex items-center justify-center space-x-2 transition-all"
+          className="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700/60 text-slate-800 dark:text-slate-200 text-xs font-bold flex items-center justify-center space-x-2 transition-all"
         >
-          <Zap className="w-4 h-4 text-amber-400" />
+          <Zap className="w-4 h-4 text-amber-500" />
           <span>Continue as Guest (No Password Required)</span>
         </button>
 

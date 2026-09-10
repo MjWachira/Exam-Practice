@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bookmark, CheckCircle2, XCircle, Info, Sparkles } from 'lucide-react';
+import { Bookmark, CheckCircle2, XCircle, Info } from 'lucide-react';
 
 export default function QuestionCard({
   question,
@@ -18,36 +18,36 @@ export default function QuestionCard({
   const isCorrect = isPracticeMode && isAnswered && selectedOption.toUpperCase() === question.correctAnswer.toUpperCase();
 
   return (
-    <div className="glass-panel rounded-3xl p-6 sm:p-8 relative border border-slate-700/60 shadow-2xl transition-all">
+    <div className="glass-panel rounded-3xl p-6 sm:p-8 relative border border-slate-200/80 dark:border-slate-700/60 shadow-2xl transition-all">
       
       {/* Header Meta Info */}
-      <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-slate-800">
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-slate-200 dark:border-slate-800">
         
         {/* Domain Badge & Question Counter */}
         <div className="flex items-center space-x-3">
-          <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+          <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider">
             {question.domain || 'Scrum Knowledge'}
           </span>
-          <span className="px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 text-xs font-semibold">
+          <span className="px-2.5 py-0.5 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-400 text-xs font-semibold">
             {question.difficulty || 'Medium'}
           </span>
         </div>
 
         {/* Question Counter & Flag Button */}
         <div className="flex items-center space-x-4">
-          <span className="text-xs font-bold text-slate-400">
-            Question <span className="text-slate-100 text-sm font-extrabold">{currentIndex + 1}</span> of {totalQuestions}
+          <span className="text-xs font-bold text-slate-500 dark:text-slate-400">
+            Question <span className="text-slate-900 dark:text-slate-100 text-sm font-extrabold">{currentIndex + 1}</span> of {totalQuestions}
           </span>
           
           <button
             onClick={() => onToggleFlag(question.id)}
             className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
               isFlagged
-                ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow-lg shadow-amber-500/10'
-                : 'bg-slate-800/80 text-slate-400 hover:text-amber-400 border border-slate-700/50'
+                ? 'bg-amber-500/20 text-amber-700 dark:text-amber-300 border border-amber-500/40 shadow-lg shadow-amber-500/10'
+                : 'bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 hover:text-amber-600 dark:hover:text-amber-400 border border-slate-200 dark:border-slate-700/50'
             }`}
           >
-            <Bookmark className={`w-4 h-4 ${isFlagged ? 'fill-amber-400 text-amber-400' : ''}`} />
+            <Bookmark className={`w-4 h-4 ${isFlagged ? 'fill-amber-500 text-amber-500' : ''}`} />
             <span>{isFlagged ? 'Flagged' : 'Flag'}</span>
           </button>
         </div>
@@ -56,7 +56,7 @@ export default function QuestionCard({
 
       {/* Question Text */}
       <div className="mb-8">
-        <h2 className="text-lg sm:text-xl font-bold text-slate-100 leading-relaxed tracking-tight">
+        <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100 leading-relaxed tracking-tight">
           {question.question}
         </h2>
       </div>
@@ -65,20 +65,20 @@ export default function QuestionCard({
       <div className="space-y-3.5 mb-8">
         {question.options.map((opt) => {
           const isSelected = selectedOption === opt.key;
-          let optionStyle = 'bg-slate-900/60 border-slate-800 text-slate-300 hover:border-slate-700 hover:bg-slate-800/50';
-          let keyBadgeStyle = 'bg-slate-800 text-slate-400 border-slate-700';
+          let optionStyle = 'bg-slate-100/70 dark:bg-slate-900/60 border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-slate-200/60 dark:hover:bg-slate-800/50';
+          let keyBadgeStyle = 'bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-400 border-slate-300 dark:border-slate-700';
 
           if (isSelected) {
-            optionStyle = 'bg-emerald-500/10 border-emerald-500 text-emerald-300 shadow-md shadow-emerald-500/10';
+            optionStyle = 'bg-emerald-500/10 border-emerald-500 text-emerald-800 dark:text-emerald-300 shadow-md shadow-emerald-500/10 font-medium';
             keyBadgeStyle = 'bg-emerald-500 text-slate-950 border-emerald-400 font-extrabold';
           }
 
           if (isPracticeMode && showInstantFeedback && isAnswered) {
             if (opt.key.toUpperCase() === question.correctAnswer.toUpperCase()) {
-              optionStyle = 'bg-emerald-500/20 border-emerald-500 text-emerald-200 ring-2 ring-emerald-500/50';
+              optionStyle = 'bg-emerald-500/20 border-emerald-500 text-emerald-900 dark:text-emerald-200 ring-2 ring-emerald-500/50';
               keyBadgeStyle = 'bg-emerald-500 text-slate-950 font-bold';
             } else if (isSelected && !isCorrect) {
-              optionStyle = 'bg-rose-500/20 border-rose-500 text-rose-200';
+              optionStyle = 'bg-rose-500/20 border-rose-500 text-rose-900 dark:text-rose-200';
               keyBadgeStyle = 'bg-rose-500 text-slate-100 font-bold';
             }
           }
@@ -99,10 +99,10 @@ export default function QuestionCard({
               {isPracticeMode && showInstantFeedback && isAnswered && (
                 <div>
                   {opt.key.toUpperCase() === question.correctAnswer.toUpperCase() && (
-                    <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+                    <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                   )}
                   {isSelected && !isCorrect && (
-                    <XCircle className="w-5 h-5 text-rose-400" />
+                    <XCircle className="w-5 h-5 text-rose-600 dark:text-rose-400" />
                   )}
                 </div>
               )}
@@ -115,14 +115,14 @@ export default function QuestionCard({
       {isPracticeMode && showInstantFeedback && isAnswered && (
         <div className={`p-4 rounded-2xl border animate-fade-in ${
           isCorrect
-            ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300'
-            : 'bg-amber-500/10 border-amber-500/30 text-amber-300'
+            ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-800 dark:text-emerald-300'
+            : 'bg-amber-500/10 border-amber-500/30 text-amber-800 dark:text-amber-300'
         }`}>
           <div className="flex items-center space-x-2 font-bold text-xs uppercase tracking-wider mb-2">
             <Info className="w-4 h-4" />
             <span>Official Scrum Alliance Explanation</span>
           </div>
-          <p className="text-xs text-slate-200 leading-relaxed">
+          <p className="text-xs text-slate-700 dark:text-slate-200 leading-relaxed">
             {question.explanation}
           </p>
         </div>

@@ -6,7 +6,8 @@ import ExamSessionPage from './pages/ExamSessionPage';
 import SessionResultsPage from './pages/SessionResultsPage';
 import SessionHistoryPage from './pages/SessionHistoryPage';
 import AuthPage from './pages/AuthPage';
-import { AuthProvider, useAuth } from './context/AuthContext';
+import { AuthProvider } from './context/AuthContext';
+import { ThemeProvider } from './context/ThemeContext';
 
 function MainApp() {
   const [activeTab, setActiveTab] = useState('dashboard'); // 'dashboard', 'history', 'exam', 'results'
@@ -32,7 +33,7 @@ function MainApp() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col justify-between selection:bg-emerald-500 selection:text-slate-950">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 flex flex-col justify-between selection:bg-emerald-500 selection:text-slate-950 transition-colors duration-300">
       
       {/* Top Navbar */}
       {activeTab !== 'exam' && (
@@ -79,9 +80,9 @@ function MainApp() {
 
       {/* Footer */}
       {activeTab !== 'exam' && (
-        <footer className="border-t border-slate-800/80 bg-slate-950 py-6 text-center text-xs text-slate-500">
+        <footer className="border-t border-slate-200 dark:border-slate-800/80 bg-white/80 dark:bg-slate-950 py-6 text-center text-xs text-slate-500 dark:text-slate-400">
           <p>© 2026 ScrumMaster Pro. Certified ScrumMaster (CSM) Exam Practice Platform.</p>
-          <p className="mt-1 text-[11px] text-slate-600">Built with React, Node.js Express, & Excel Question Databases.</p>
+          <p className="mt-1 text-[11px] text-slate-400 dark:text-slate-600">Built with React, Node.js Express, & Excel Question Databases.</p>
         </footer>
       )}
 
@@ -102,8 +103,10 @@ function MainApp() {
 
 export default function App() {
   return (
-    <AuthProvider>
-      <MainApp />
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <MainApp />
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
