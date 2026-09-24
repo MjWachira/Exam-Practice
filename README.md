@@ -1,7 +1,6 @@
 # Exam Practice
 
 > A small full-stack application for creating and running exam practice sessions.
-> 
 
 ## Project Overview
 
